@@ -17,3 +17,4 @@
 
 **Action Items:**
 - Ask professor: does having a 3rd user profile mean we need to create a new app interface for that user?
+- **Response from Prof:** No

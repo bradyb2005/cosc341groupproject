@@ -1,10 +1,333 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AddMedication">
+    android:fillViewport="true">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        tools:context=".AddMedication">
+
+        <TextView
+            android:id="@+id/titleText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Medication"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Name Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/nameInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titleText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nameInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Nickname Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/nicknameInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Nickname"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nameInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/nicknameInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Instructions Input -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/instructionsInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Instructions"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nicknameInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/instructionsInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start|top"
+                android:inputType="textMultiLine"
+                android:minLines="3" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Dosage and Units Row -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/dosageInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:hint="Dosage"
+            app:layout_constraintEnd_toStartOf="@+id/DosageUnits"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/instructionsInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/dosageInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Spinner
+            android:id="@+id/DosageUnits"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/dosageInputLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/dosageInputLayout" />
+
+        <!-- Doses and Refills Remaining Row -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/dosesRemainInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:hint="Doses Remaining"
+            app:layout_constraintEnd_toStartOf="@+id/refillsRemainInputLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dosageInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/dosesRemainInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/refillsRemainInputLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Refills Remaining"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/dosesRemainInputLayout"
+            app:layout_constraintTop_toBottomOf="@id/dosageInputLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/refillsRemainInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Schedule Table Section -->
+        <TextView
+            android:id="@+id/scheduleLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Weekly Schedule"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/dosesRemainInputLayout" />
+
+        <TableLayout
+            android:id="@+id/scheduleTable"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:stretchColumns="*"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/scheduleLabel">
+
+            <!-- Table Header -->
+            <TableRow>
+                <TextView android:text="" android:gravity="center" />
+                <TextView android:text="Morn" android:gravity="center" android:textStyle="bold" />
+                <TextView android:text="Noon" android:gravity="center" android:textStyle="bold" />
+                <TextView android:text="Eve" android:gravity="center" android:textStyle="bold" />
+                <TextView android:text="Night" android:gravity="center" android:textStyle="bold" />
+            </TableRow>
+
+            <!-- Sunday Row -->
+            <TableRow>
+                <TextView android:text="Sun" android:gravity="center" android:textStyle="bold" />
+                <CheckBox android:id="@+id/cbSunMorn" android:gravity="center" />
+                <CheckBox android:id="@+id/cbSunNoon" android:gravity="center" />
+                <CheckBox android:id="@+id/cbSunEve" android:gravity="center" />
+                <CheckBox android:id="@+id/cbSunNight" android:gravity="center" />
+            </TableRow>
+            <!-- Monday Row -->
+            <TableRow>
+                <TextView android:text="Mon" android:gravity="center" android:textStyle="bold" />
+                <CheckBox android:id="@+id/cbMonMorn" android:gravity="center" />
+                <CheckBox android:id="@+id/cbMonNoon" android:gravity="center" />
+                <CheckBox android:id="@+id/cbMonEve" android:gravity="center" />
+                <CheckBox android:id="@+id/cbMonNight" android:gravity="center" />
+            </TableRow>
+            <!-- Tuesday Row -->
+            <TableRow>
+                <TextView android:text="Tue" android:gravity="center" android:textStyle="bold" />
+                <CheckBox android:id="@+id/cbTueMorn" android:gravity="center" />
+                <CheckBox android:id="@+id/cbTueNoon" android:gravity="center" />
+                <CheckBox android:id="@+id/cbTueEve" android:gravity="center" />
+                <CheckBox android:id="@+id/cbTueNight" android:gravity="center" />
+            </TableRow>
+            <!-- Wednesday Row -->
+            <TableRow>
+                <TextView android:text="Wed" android:gravity="center" android:textStyle="bold" />
+                <CheckBox android:id="@+id/cbWedMorn" android:gravity="center" />
+                <CheckBox android:id="@+id/cbWedNoon" android:gravity="center" />
+                <CheckBox android:id="@+id/cbWedEve" android:gravity="center" />
+                <CheckBox android:id="@+id/cbWedNight" android:gravity="center" />
+            </TableRow>
+            <!-- Thursday Row -->
+            <TableRow>
+                <TextView android:text="Thu" android:gravity="center" android:textStyle="bold" />
+                <CheckBox android:id="@+id/cbThuMorn" android:gravity="center" />
+                <CheckBox android:id="@+id/cbThuNoon" android:gravity="center" />
+                <CheckBox android:id="@+id/cbThuEve" android:gravity="center" />
+                <CheckBox android:id="@+id/cbThuNight" android:gravity="center" />
+            </TableRow>
+            <!-- Friday Row -->
+            <TableRow>
+                <TextView android:text="Fri" android:gravity="center" android:textStyle="bold" />
+                <CheckBox android:id="@+id/cbFriMorn" android:gravity="center" />
+                <CheckBox android:id="@+id/cbFriNoon" android:gravity="center" />
+                <CheckBox android:id="@+id/cbFriEve" android:gravity="center" />
+                <CheckBox android:id="@+id/cbFriNight" android:gravity="center" />
+            </TableRow>
+            <!-- Saturday Row -->
+            <TableRow>
+                <TextView android:text="Sat" android:gravity="center" android:textStyle="bold" />
+                <CheckBox android:id="@+id/cbSatMorn" android:gravity="center" />
+                <CheckBox android:id="@+id/cbSatNoon" android:gravity="center" />
+                <CheckBox android:id="@+id/cbSatEve" android:gravity="center" />
+                <CheckBox android:id="@+id/cbSatNight" android:gravity="center" />
+            </TableRow>
+        </TableLayout>
+
+        <!-- Time Settings Section -->
+        <TextView
+            android:id="@+id/timesLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Notification Times"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/scheduleTable" />
+
+        <!-- Morning Time -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/morningTimeLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Morning Time"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/timesLabel">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="time"
+                android:text="08:00" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Noon Time -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/noonTimeLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Noon Time"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/morningTimeLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextTime2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="time"
+                android:text="12:00" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Evening Time -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/eveningTimeLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Evening Time"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/noonTimeLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextTime3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="time"
+                android:text="18:00" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- Night Time -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/nightTimeLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="Night Time"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/eveningTimeLayout">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/editTextTime4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="time"
+                android:text="22:00" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/saveButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="16dp"
+            android:text="Save Medication"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nightTimeLayout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

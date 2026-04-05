@@ -15,5 +15,14 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, ConsistencyCalendar.class);
             startActivity(intent);
         });
+
+        Button btnViewList = findViewById(R.id.btnViewList);
+        btnViewList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MedicationList.class);
+                startActivity(intent);
+            }
+        });
     }
 }

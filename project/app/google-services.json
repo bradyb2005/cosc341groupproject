@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "278388163827",
+    "firebase_url": "https://cosc341project-66346-default-rtdb.firebaseio.com",
+    "project_id": "cosc341project-66346",
+    "storage_bucket": "cosc341project-66346.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:278388163827:android:39b4b3071b029407172386",
+        "android_client_info": {
+          "package_name": "com.example.cosc341project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQAgBCOBRwWpkYAgiWGbg2hyfwo0CVjiA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

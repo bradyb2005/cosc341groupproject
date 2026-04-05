@@ -42,7 +42,7 @@ public class ConsistencyCalendar extends AppCompatActivity {
         detailStatus = findViewById(R.id.detailStatus);
         detailsPanel = findViewById(R.id.detailsPanel);
 
-        // Placeholder: Set "today" to April 9th
+        // Placeholder: Setting "today" to April 9th
         today = Calendar.getInstance();
         today.set(Calendar.MONTH, Calendar.APRIL);
         today.set(Calendar.DAY_OF_MONTH, 9);
@@ -51,20 +51,20 @@ public class ConsistencyCalendar extends AppCompatActivity {
 
         updateCalendar();
 
-        // TASK LINKING: Back to Main Page (Task 1)
+        // back to main page
         findViewById(R.id.backBtnBox).setOnClickListener(v -> finish());
         
-        // TASK LINKING: Jump to Today
+        // jumping to current day (moving callender to current month)
         findViewById(R.id.todayBtnBox).setOnClickListener(v -> resetToToday());
 
-        // TASK LINKING: Add New Medication (Task 2)
+        // linking button to add new medication
         findViewById(R.id.addMedBtnBox).setOnClickListener(v -> {
             Intent intent = new Intent(ConsistencyCalendar.this, AddMedication.class);
             startActivity(intent);
         });
 
-        // TASK LINKING: Emergency Protocol (Task 4)
-        // Note: Task 4 requires emergency options to be at the bottom of every page
+        // linking button for emergency options
+        // required to be at bottom of every page
         findViewById(R.id.emergencyBtnBox).setOnClickListener(v -> {
             // This would link to the Emergency Protocol activity
             Toast.makeText(this, "Opening Emergency Protocol...", Toast.LENGTH_SHORT).show();

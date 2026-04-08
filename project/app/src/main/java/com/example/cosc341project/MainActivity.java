@@ -32,5 +32,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        Button btnGoToCalendar = findViewById(R.id.btnGoToCalendar);
+        btnGoToCalendar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, ConsistencyCalendar.class);
+                startActivity(intent);
+            }
+        });
     }
 }

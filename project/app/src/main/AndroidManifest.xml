@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Cosc341Project">
         <activity
+            android:name=".ConsistencyCalendar"
+            android:exported="false" />
+        <activity
             android:name=".AddMedication"
             android:exported="false" />
         <activity

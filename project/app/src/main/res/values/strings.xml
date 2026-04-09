@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Cosc341Project</string>
+    <string name="back">Back</string>
 </resources>

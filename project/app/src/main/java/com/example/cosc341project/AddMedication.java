@@ -1,5 +1,6 @@
 package com.example.cosc341project;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -58,6 +59,12 @@ public class AddMedication extends AppCompatActivity {
 
         dosageUnitsSpinner = findViewById(R.id.DosageUnits);
         saveButton = findViewById(R.id.saveButton);
+        findViewById(R.id.backBtnBox).setOnClickListener(v -> {
+            Intent intent = new Intent(AddMedication.this, MainActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            startActivity(intent);
+            finish();
+        });
 
         // Setup Spinner
         String[] units = {"mg", "mcg", "g", "ml", "pills", "capsules"};

@@ -13,6 +13,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Cosc341Project">
         <activity
+            android:name=".MedicationNotYet"
+            android:exported="false" />
+        <activity
+            android:name=".MedicationTaken"
+            android:exported="false" />
+        <activity
+            android:name=".MedicationReminder"
+            android:exported="false" />
+        <activity
             android:name=".ConsistencyCalendar"
             android:exported="false" />
         <activity

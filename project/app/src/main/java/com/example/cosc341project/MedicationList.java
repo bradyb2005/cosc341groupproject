@@ -68,6 +68,13 @@ public class MedicationList extends AppCompatActivity {
             }
         });
 
+        findViewById(R.id.backBtnBox).setOnClickListener(v -> {
+            Intent intent = new Intent(MedicationList.this, MainActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
+            startActivity(intent);
+            finish();
+        });
+
         Button btnAddMedication = findViewById(R.id.btnAddMedication);
         btnAddMedication.setOnClickListener(new View.OnClickListener() {
             @Override

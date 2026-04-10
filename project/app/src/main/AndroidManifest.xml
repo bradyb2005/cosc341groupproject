@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Cosc341Project">
         <activity
+            android:name=".EmergencyOptions"
+            android:exported="false" />
+        <activity
             android:name=".MedicationNotYet"
             android:exported="false" />
         <activity

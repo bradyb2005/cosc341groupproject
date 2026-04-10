@@ -83,5 +83,13 @@ public class MedicationList extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        findViewById(R.id.btnEmergencyOptions).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MedicationList.this, EmergencyOptions.class);
+                startActivity(intent);
+            }
+        });
     }
 }

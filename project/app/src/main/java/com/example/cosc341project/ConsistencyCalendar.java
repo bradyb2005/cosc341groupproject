@@ -65,9 +65,9 @@ public class ConsistencyCalendar extends AppCompatActivity {
 
         // linking button for emergency options
         // required to be at bottom of every page
-        findViewById(R.id.emergencyBtnBox).setOnClickListener(v -> {
-            // This would link to the Emergency Protocol activity
-            Toast.makeText(this, "Opening Emergency Protocol...", Toast.LENGTH_SHORT).show();
+        findViewById(R.id.btnEmergencyOptions).setOnClickListener(v -> {
+            Intent intent = new Intent(ConsistencyCalendar.this, EmergencyOptions.class);
+            startActivity(intent);
         });
 
         findViewById(R.id.prevMonthBox).setOnClickListener(v -> {

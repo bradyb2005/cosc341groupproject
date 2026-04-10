@@ -27,5 +27,11 @@ public class MedicationReminder extends AppCompatActivity {
             Intent intent = new Intent(MedicationReminder.this, MedicationNotYet.class);
             startActivity(intent);
         });
+
+        // goes to emergency options
+        findViewById(R.id.btnEmergencyOptions).setOnClickListener(v -> {
+            Intent intent = new Intent(MedicationReminder.this, EmergencyOptions.class);
+            startActivity(intent);
+        });
     }
 }
